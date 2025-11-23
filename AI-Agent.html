@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Canadian Export AI Assistant</title>
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Lora:700,400|Montserrat:600,400&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,126 +12,180 @@
       min-height: 100vh;
       background: linear-gradient(120deg, #e2eafc 0%, #f1f5f9 100%);
       font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
+      color: #1e293b;
+    }
+    .container {
+      width: 95%;
+      max-width: 1100px;
+      margin: 0 auto;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      gap: 42px;
+      padding-top: 40px;
+      align-items: flex-start;
+    }
+    .main-content {
+      flex: 2;
+      min-width: 350px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 18px;
+      box-shadow: 0 2px 14px #a3a3a345;
+      padding: 40px 48px 32px 48px;
     }
     .header {
-      width: 100%;
-      padding: 46px 0 22px;
       display: flex;
-      flex-direction: column;
       align-items: center;
+      margin-bottom: 30px;
+      gap: 28px;
     }
     .profile-img {
-      width: 135px;
-      height: 135px;
-      object-fit: cover;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
-      border: 5px solid #2563eb;
+      border: 3px solid #2563eb;
+      box-shadow: 0 3px 10px #64748b21;
       background: #fff;
-      box-shadow: 0 8px 24px #64748b33;
-      margin-bottom: 18px;
+      object-fit: cover;
+    }
+    .headline-group {
+      flex: 1;
     }
     .headline {
       font-family: 'Lora', serif;
-      font-size: 2.2em;
+      font-size: 2em;
       color: #1e293b;
       font-weight: 700;
-      margin-bottom: 12px;
-      text-align: center;
-      letter-spacing: 0.7px;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+      text-align: left;
     }
     .subtitle {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.1em;
+      font-size: 1.15em;
       color: #334155;
       font-weight: 500;
-      text-align: center;
-      margin-bottom: 38px;
-    }
-    .content {
-      background: rgba(255,255,255,0.92);
-      border-radius: 18px;
-      box-shadow: 0 2px 14px #94a3b830;
-      margin: 0 auto 28px auto;
-      max-width: 560px;
-      width: 95%;
-      padding: 30px 22px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin-bottom: 0;
+      text-align: left;
     }
     .story {
-      font-size: 1.09em;
+      margin: 22px 0 12px 0;
+      font-size: 1.07em;
       color: #334155;
-      margin-bottom: 16px;
-      text-align: center;
+      text-align: left;
       line-height: 1.7;
-      font-family: 'Roboto', sans-serif;
     }
     .sample-questions {
-      margin: 24px 0 4px 0;
-      padding: 18px 16px;
       background: #e0e7ff;
       border-radius: 12px;
       box-shadow: 0 1px 6px #a5b4fc22;
-      width: 95%;
-      max-width: 400px;
+      max-width: 440px;
+      margin-top: 20px;
+      margin-bottom: 16px;
+      padding: 16px 16px 16px 28px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.05em;
-      color: #3730a3;
+      color: #312e81;
+      text-align: left;
+      font-size: 1.07em;
     }
     .sample-questions span {
       display: block;
       padding: 4px 0;
-      font-family: 'Montserrat', sans-serif;
       color: #0f172a;
+      font-size: 1em;
+    }
+    .cta {
+      font-size: 1.09em;
+      color: #2563eb;
+      font-weight: 600;
+      margin: 28px 0 0 0;
+      text-align: left;
+    }
+    .side-images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+      margin-top: 24px;
+      min-width: 220px;
+    }
+    .illustration {
+      width: 95%;
+      max-width: 240px;
+      border-radius: 12px;
+      box-shadow: 0 3px 16px #64748b22;
+      margin-bottom: 4px;
+      object-fit: cover;
+      background: #fff;
+    }
+    .image-caption {
+      text-align: center;
+      font-size: 0.93em;
+      color: #475569;
+      margin-bottom: 16px;
     }
     .footer {
       font-size: 0.89em;
       color: #64748b;
       text-align: center;
       margin-bottom: 18px;
-      margin-top: 18px;
+      margin-top: 44px;
       letter-spacing: 0.7px;
     }
-    @media (max-width: 630px) {
-      .profile-img { width:80px; height:80px; }
-      .headline { font-size:1.3em;}
-      .subtitle { font-size:1em;}
-      .content { padding:14px 4px;}
+    @media (max-width: 900px) {
+      .container { flex-direction: column; align-items:center;}
+      .main-content { width:100%; min-width:0; padding:22px 12px;}
+      .side-images { flex-direction: row; gap:18px; margin-bottom:24px; }
+      .illustration {max-width:120px;}
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="Self.jpg" alt="Profile Image" class="profile-img" />
-    <div class="headline">Unlock Export Success with Your Canadian AI Assistant</div>
-    <div class="subtitle">Expert Guidance for Every Stage of Your Global Journey</div>
-  </div>
-  <div class="content">
-    <div class="story">
-      Canadian businesses are driven by ideas, products, and ambition.<br><br>
-      But exporting—even to a familiar market—can quickly get complicated.<br>
-      Finding the right information, navigating regulations, and keeping up with changing requirements often means hours lost in forms, documents, and government jargon.<br><br>
-      The real challenge? Getting reliable, targeted answers <em>quickly</em>, so you can focus on your expertise and move your business forward without delay.<br><br>
-      That's why we built an AI-powered export assistant to make the process simple, responsive, and secure.<br>
-      Whether you’re just starting or expanding globally, get expert, data-driven support—right when you need it.
+  <div class="container">
+    <div class="main-content">
+      <div class="header">
+        <img src="Self.jpg" alt="Profile Image" class="profile-img" />
+        <div class="headline-group">
+          <div class="headline">Unlock Export Success with Your Canadian AI Assistant</div>
+          <div class="subtitle">Expert Guidance for Every Stage of Your Global Journey</div>
+        </div>
+      </div>
+      <div class="story">
+        Canadian businesses are driven by ideas, products, and ambition.<br><br>
+        But exporting—even to a familiar market—can quickly get complicated.<br>
+        Finding the right information, navigating regulations, and keeping up with changing requirements often means hours lost in forms, documents, and government jargon.<br><br>
+        The real challenge? Getting reliable, targeted answers <em>quickly</em>, so you can focus on your expertise and move your business forward without delay.<br><br>
+        That's why we built an AI-powered export assistant to make the process simple, responsive, and secure.<br>
+        Whether you’re just starting or expanding globally, get expert, data-driven support—right when you need it.
+      </div>
+      <div class="sample-questions">
+        <b>Sample Questions for Your AI Export Assistant:</b>
+        <span>&bull; What permits do I need to export food products?</span>
+        <span>&bull; What are the shipping options for small businesses?</span>
+        <span>&bull; How do I find regulations for exporting to the U.S.?</span>
+        <span>&bull; Can you guide me on required export forms?</span>
+        <span>&bull; How do I avoid common export mistakes?</span>
+        <span>&bull; What are the taxes and duties for my product?</span>
+      </div>
+      <div class="cta">
+        Ready to move forward?<br>
+        Click the chat bubble at the bottom right to start a secure, confidential conversation.<br>
+        Ask your first export question—let’s get you to global success, faster.
+      </div>
     </div>
-    <div class="sample-questions">
-      Try asking the AI Agent:<br>
-      <span>&bull; What permits do I need to export food products?</span>
-      <span>&bull; What are the shipping options for small businesses?</span>
-      <span>&bull; How do I find regulations for exporting to the U.S.?</span>
-      <span>&bull; Can you guide me on required export forms?</span>
-      <span>&bull; How do I avoid common export mistakes?</span>
-      <span>&bull; What are the taxes and duties for my product?</span>
-    </div>
-    <div class="story" style="color:#3b4262;font-size:1em;margin-top:24px;">
-      <b>Ready to move forward?</b><br>
-      Click the chat bubble at the bottom right to start a secure, confidential conversation.<br>
-      Ask your first export question—let’s get you to global success, faster.
+    <div class="side-images">
+      <div>
+        <img src="global-trade.jpg" class="illustration" alt="Global Trade illustration">
+        <div class="image-caption">Global trade and business connections</div>
+      </div>
+      <div>
+        <img src="shipping-documents.jpg" class="illustration" alt="Shipping and export documentation">
+        <div class="image-caption">Export paperwork made easy</div>
+      </div>
+      <div>
+        <img src="ai-support.jpg" class="illustration" alt="AI-powered export support">
+        <div class="image-caption">Your AI export assistant at work</div>
+      </div>
     </div>
   </div>
   <div class="footer">
