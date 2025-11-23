@@ -104,7 +104,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 42px;
       align-items: center;
       margin-top: 24px;
       min-width: 220px;
@@ -118,19 +118,53 @@
       margin-bottom: 4px;
       object-fit: cover;
       background: #fff;
+      display: block;
     }
     .image-caption {
       text-align: center;
-      font-size: 0.93em;
+      font-size: 1.08em;
       color: #475569;
-      margin-bottom: 16px;
-    }
-    .resource-links ul {
-      padding-left: 0;
-      margin-top: 6px;
-    }
-    .resource-links li {
+      margin-top: 10px;
       margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .image-link {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .image-link a {
+      color: #2563eb;
+      font-size: 1em;
+      text-decoration: none;
+    }
+    .image-link a:hover {
+      text-decoration: underline;
+    }
+    .news-section {
+      width: 100%;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px #a3a3a333;
+      margin-top: 40px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .news-section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.14em;
+      color: #26406f;
+      margin-bottom: 4px;
+    }
+    .news-section a {
+      display: inline-block;
+      color: #2563eb;
+      font-size: 1.03em;
+      text-decoration: none;
+      margin-top: 6px;
+      margin-bottom: 2px;
+    }
+    .news-section a:hover {
+      text-decoration: underline;
     }
     .footer {
       font-size: 0.89em;
@@ -141,10 +175,11 @@
       letter-spacing: 0.7px;
     }
     @media (max-width: 900px) {
-      .container { flex-direction: column; align-items:center;}
+      .container { flex-direction: column; align-items:center; }
       .main-content { width:100%; min-width:0; padding:22px 12px;}
       .side-images { flex-direction: row; gap:18px; margin-bottom:24px; }
       .illustration {max-width:120px; height:90px;}
+      .news-section {margin-top:18px;}
     }
   </style>
 </head>
@@ -188,230 +223,33 @@
       <div>
         <img src="global-trade.jpg" class="illustration" alt="Global trade illustration">
         <div class="image-caption">Global trade and business connections</div>
-      </div>
-      <div>
-        <img src="shipping-documents.jpg" class="illustration" alt="Shipping and export documentation">
-        <div class="image-caption">Export paperwork made easy</div>
-      </div>
-      <div>
-        <img src="ai-support.jpg" class="illustration" alt="AI-powered export support">
-        <div class="image-caption">Your AI export assistant at work</div>
-      </div>
-      <div class="resource-links" style="margin-top:28px;">
-        <h3 style="font-family:'Montserrat',sans-serif;font-size:1.07em;color:#334155;text-align:center;margin-bottom:10px;">
-          Useful Export Resources:
-        </h3>
-        <ul style="font-size:1em;list-style-type:disc;margin:0 0 0 22px;">
-          <li>
-            <a href="https://www.tradecommissioner.gc.ca/" target="_blank" style="color:#2563eb;text-decoration:none;">Canada Trade Commissioner Service</a>
-          </li>
-          <li>
-            <a href="https://www.canada.ca/en/services/business/permits/export.html" target="_blank" style="color:#2563eb;text-decoration:none;">Canadian Export Permits and Documents</a>
-          </li>
-          <li>
-            <a href="https://www.statcan.gc.ca/en/subjects-start/international_trade" target="_blank" style="color:#2563eb;text-decoration:none;">Statistics Canada – International Trade</a>
-          </li>
-          <li>
-            <a href="https://www.bdc.ca/en/articles-tools/money-finance/manage-exporting" target="_blank" style="color:#2563eb;text-decoration:none;">BDC: Manage Exporting</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    &copy; 2025 Canadian Export AI Assistant | Powered by SinghLabs
-  </div>
-  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
-  <elevenlabs-convai agent-id="agent_1301kacqfhgjftpaan3a91vxm8kk"></elevenlabs-convai>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Canadian Export AI Assistant</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Lora:700,400|Montserrat:600,400&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      background: linear-gradient(120deg, #e2eafc 0%, #f1f5f9 100%);
-      font-family: 'Roboto', 'Montserrat', Arial, sans-serif;
-      color: #1e293b;
-    }
-    .container {
-      width: 95%;
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: row;
-      gap: 42px;
-      padding-top: 40px;
-      align-items: flex-start;
-    }
-    .main-content {
-      flex: 2;
-      min-width: 350px;
-      background: rgba(255,255,255,0.95);
-      border-radius: 18px;
-      box-shadow: 0 2px 14px #a3a3a345;
-      padding: 40px 48px 32px 48px;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 30px;
-      gap: 28px;
-    }
-    .profile-img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 3px solid #2563eb;
-      box-shadow: 0 3px 10px #64748b21;
-      background: #fff;
-      object-fit: cover;
-    }
-    .headline-group {
-      flex: 1;
-    }
-    .headline {
-      font-family: 'Lora', serif;
-      font-size: 2em;
-      color: #1e293b;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: 0.2px;
-      text-align: left;
-    }
-    .subtitle {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.15em;
-      color: #334155;
-      font-weight: 500;
-      margin-bottom: 0;
-      text-align: left;
-    }
-    .story {
-      margin: 22px 0 12px 0;
-      font-size: 1.07em;
-      color: #334155;
-      text-align: left;
-      line-height: 1.7;
-    }
-    .sample-questions {
-      background: #e0e7ff;
-      border-radius: 12px;
-      box-shadow: 0 1px 6px #a5b4fc22;
-      max-width: 440px;
-      margin-top: 20px;
-      margin-bottom: 16px;
-      padding: 16px 16px 16px 28px;
-      font-family: 'Montserrat', sans-serif;
-      color: #312e81;
-      text-align: left;
-      font-size: 1.07em;
-    }
-    .sample-questions span {
-      display: block;
-      padding: 4px 0;
-      color: #0f172a;
-      font-size: 1em;
-    }
-    .cta {
-      font-size: 1.09em;
-      color: #2563eb;
-      font-weight: 600;
-      margin: 28px 0 0 0;
-      text-align: left;
-    }
-    .side-images {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      align-items: center;
-      margin-top: 24px;
-      min-width: 220px;
-    }
-    .illustration {
-      width: 95%;
-      max-width: 240px;
-      border-radius: 12px;
-      box-shadow: 0 3px 16px #64748b22;
-      margin-bottom: 4px;
-      object-fit: cover;
-      background: #fff;
-    }
-    .image-caption {
-      text-align: center;
-      font-size: 0.93em;
-      color: #475569;
-      margin-bottom: 16px;
-    }
-    .footer {
-      font-size: 0.89em;
-      color: #64748b;
-      text-align: center;
-      margin-bottom: 18px;
-      margin-top: 44px;
-      letter-spacing: 0.7px;
-    }
-    @media (max-width: 900px) {
-      .container { flex-direction: column; align-items:center;}
-      .main-content { width:100%; min-width:0; padding:22px 12px;}
-      .side-images { flex-direction: row; gap:18px; margin-bottom:24px; }
-      .illustration {max-width:120px;}
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="main-content">
-      <div class="header">
-        <img src="Self.jpg" alt="Profile Image" class="profile-img" />
-        <div class="headline-group">
-          <div class="headline">Unlock Export Success with Your Canadian AI Assistant</div>
-          <div class="subtitle">Expert Guidance for Every Stage of Your Global Journey</div>
+        <div class="image-link">
+          <a href="https://www.bdc.ca/en" target="_blank">
+            BDC – The Bank for Canadian Entrepreneurs
+          </a>
         </div>
       </div>
-      <div class="story">
-        Canadian businesses are driven by ideas, products, and ambition.<br><br>
-        But exporting—even to a familiar market—can quickly get complicated.<br>
-        Finding the right information, navigating regulations, and keeping up with changing requirements often means hours lost in forms, documents, and government jargon.<br><br>
-        The real challenge? Getting reliable, targeted answers <em>quickly</em>, so you can focus on your expertise and move your business forward without delay.<br><br>
-        That's why we built an AI-powered export assistant to make the process simple, responsive, and secure.<br>
-        Whether you’re just starting or expanding globally, get expert, data-driven support—right when you need it.
-      </div>
-      <div class="sample-questions">
-        <b>Sample Questions for Your AI Export Assistant:</b>
-        <span>&bull; What permits do I need to export food products?</span>
-        <span>&bull; What are the shipping options for small businesses?</span>
-        <span>&bull; How do I find regulations for exporting to the U.S.?</span>
-        <span>&bull; Can you guide me on required export forms?</span>
-        <span>&bull; How do I avoid common export mistakes?</span>
-        <span>&bull; What are the taxes and duties for my product?</span>
-      </div>
-      <div class="cta">
-        Ready to move forward?<br>
-        Click the chat bubble at the bottom right to start a secure, confidential conversation.<br>
-        Ask your first export question—let’s get you to global success, faster.
-      </div>
-    </div>
-    <div class="side-images">
-      <div>
-        <img src="global-trade.jpg" class="illustration" alt="Global Trade illustration">
-        <div class="image-caption">Global trade and business connections</div>
-      </div>
       <div>
         <img src="shipping-documents.jpg" class="illustration" alt="Shipping and export documentation">
         <div class="image-caption">Export paperwork made easy</div>
+        <div class="image-link">
+          <a href="https://www.canada.ca/en/services/business/permits.html" target="_blank">
+            Permits, Licenses & Regulations (Canada.ca)
+          </a>
+        </div>
       </div>
       <div>
         <img src="ai-support.jpg" class="illustration" alt="AI-powered export support">
         <div class="image-caption">Your AI export assistant at work</div>
+        <div class="image-link">
+          <a href="mailto:ask@rajbir.guru">
+            Contact SinghLabs for specific trade questions
+          </a>
+        </div>
+      </div>
+      <div class="news-section">
+        <h3>Latest News: Trade and Canadian Business</h3>
+        <a href="https://www.cbc.ca/news/business" target="_blank">See the latest headlines at CBC Business News</a>
       </div>
     </div>
   </div>
